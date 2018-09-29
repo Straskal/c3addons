@@ -1,0 +1,86 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for Stateful.",
+	"text": {
+		"behaviors": {
+			"straskal_stateful": {
+				"name": "Stateful",
+				"description": "Give the object are very simple state machine",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"initial-state": {
+						"name": "Initial state",
+						"desc": "The initial state of this objects' state machine."
+					}
+				},
+				"aceCategories": {
+				},
+				"conditions": {
+					"on-enter": {
+						"list-name": "On enter",
+						"display-text": "On object entered [b]{0}[/b] state",
+						"description": "Called when the object enters a new state.",
+						"params": {
+							"new-state": {
+								"name": "New state",
+								"desc": "The new state of the object."
+							}
+						}
+					},
+					"on-exit": {
+						"list-name": "On exit",
+						"display-text": "On object exited [b]{0}[/b] state",
+						"description": "Called when the object exits a state.",
+						"params": {
+							"previous-state": {
+								"name": "Previous state",
+								"desc": "The previous state of the object."
+							}
+						}
+					},
+					"compare-state": {
+						"list-name": "Compare state",
+						"display-text": "Objects' current state is [b]{0}[/b]",
+						"description": "Compare the objects' state.",
+						"params": {
+							"state": {
+								"name": "State",
+								"desc": "The state in which to compare to the object."
+							}
+						}
+					}
+				},
+				"actions": {
+					"set-state": {
+						"list-name": "Set state",
+						"display-text": "Set object to [b]{0}[/b] state",
+						"description": "Set this objects' state.",
+						"params": {
+							"state": {
+								"name": "New state",
+								"desc": "The state to set the object to."
+							}
+						}
+					}
+				},
+				"expressions": {
+					"get-current-state": {
+						"description": "Gets the current state of this object.",
+						"translated-name": "GetCurrentState"
+					},
+					"get-previous-state": {
+						"description": "Gets the previous state of this object.",
+						"translated-name": "GetPreviousState"
+					}
+				},
+				"debugger": {
+					"stateful-properties": {
+						"title": "Stateful",
+						"current-state": "Current state",
+						"previous-state": "Previous state"
+					}
+				}
+			}
+		}
+	}
+}
