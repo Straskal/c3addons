@@ -2,6 +2,8 @@
 
 // v 1.0.0.1
 // - added debugger values
+// v 1.0.0.2
+// - added icon
 
 {
 	////////////////////////////////////////////
@@ -15,7 +17,7 @@
 	const BEHAVIOR_ID = "Straskal_Stateful";
 	////////////////////////////////////////////
 
-	const BEHAVIOR_VERSION = "1.0.0.1";
+	const BEHAVIOR_VERSION = "1.0.0.2";
 	const BEHAVIOR_CATEGORY = "attributes";
 
 	const BEHAVIOR_CLASS = SDK.Behaviors.Straskal_Stateful = class Stateful extends SDK.IBehaviorBase {
@@ -29,6 +31,7 @@
 			this._info.SetVersion(BEHAVIOR_VERSION);
 			this._info.SetCategory(BEHAVIOR_CATEGORY);
 			this._info.SetAuthor("Straskal");
+			this._info.SetIcon("icon.png", "image/png");
 			this._info.SetHelpUrl(lang(".help-url"));
 			this._info.SetIsOnlyOneAllowed(true);
 			this._info.SetSupportedRuntimes(["c3"]);
