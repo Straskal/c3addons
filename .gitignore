@@ -60,7 +60,5 @@ typings/
 # next.js build output
 .next
 
-internal
-node_modules
 package.json
 package-lock.json
