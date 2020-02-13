@@ -1,12 +1,12 @@
 {
   "languageTag": "en-US",
-  "fileDescription": "Strings for Family Container Plugin",
+  "fileDescription": "Strings for Sibling Plugin",
   "text": {
     "behaviors": {
-      "straskal_familycontainer": {
-        "name": "Family Container",
+      "straskal_sibling": {
+        "name": "Sibling",
         "description": "A behavior that enables container object picking from family instances.",
-        "help-url": "https://github.com/armandoalonso/c3IDE",
+        "help-url": "https://github.com/Straskal/c3addons",
         "properties": {},
         "aceCategories": {},
         "conditions": {

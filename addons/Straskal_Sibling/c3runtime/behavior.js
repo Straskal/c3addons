@@ -1,6 +1,6 @@
 "use strict";
 {
-    C3.Behaviors.Straskal_FamilyContainer = class FamilyContainerBehavior extends C3.SDKBehaviorBase
+    C3.Behaviors.Straskal_Sibling = class SiblingBehavior extends C3.SDKBehaviorBase
     {
         constructor(opts)
         {

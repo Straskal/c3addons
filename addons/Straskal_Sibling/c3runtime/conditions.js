@@ -1,6 +1,7 @@
 "use strict";
 {
-    C3.Behaviors.Straskal_FamilyContainer.Cnds = {
+    C3.Behaviors.Straskal_Sibling.Cnds = 
+    {
         PickSibling(siblingType)
         {
             return this._PickSibling(siblingType);

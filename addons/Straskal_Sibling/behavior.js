@@ -1,11 +1,11 @@
 "use strict";
 {
 
-    const BEHAVIOR_ID = "Straskal_FamilyContainer";
+    const BEHAVIOR_ID = "Straskal_Sibling";
     const BEHAVIOR_VERSION = "1.0.0.0";
-    const BEHAVIOR_CATEGORY = "other";
+    const BEHAVIOR_CATEGORY = "attributes";
 
-    const BEHAVIOR_CLASS = SDK.Behaviors.Straskal_FamilyContainer = class FamilyContainerBehavior extends SDK.IBehaviorBase
+    const BEHAVIOR_CLASS = SDK.Behaviors.Straskal_Sibling = class SiblingBehavior extends SDK.IBehaviorBase
     {
         constructor()
         {

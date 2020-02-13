@@ -6,7 +6,7 @@
       "straskal_stateful": {
         "name": "Stateful",
         "description": "Adds state machine behavior to the object.",
-        "help-url": "https://github.com/armandoalonso/c3IDE",
+        "help-url": "https://github.com/Straskal/c3addons",
         "properties": {
           "initial-state-name": {
             "name": "Initial State",
