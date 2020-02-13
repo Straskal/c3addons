@@ -1,0 +1,108 @@
+{
+  "languageTag": "en-US",
+  "fileDescription": "Strings for Stateful Plugin",
+  "text": {
+    "behaviors": {
+      "straskal_stateful": {
+        "name": "Stateful",
+        "description": "Adds state machine behavior to the object.",
+        "help-url": "https://github.com/armandoalonso/c3IDE",
+        "properties": {
+          "initial-state-name": {
+            "name": "Initial State",
+            "desc": "The initial state of the state machine."
+          }
+        },
+        "aceCategories": {},
+        "conditions": {
+          "on-state-enter": {
+            "list-name": "On state enter",
+            "display-text": "On state [b]{0}[/b] enter",
+            "description": "Called when the given state is entered.",
+            "params": {
+              "state": {
+                "name": "State",
+                "desc": "The state machine's new state."
+              }
+            }
+          },
+          "on-state-exit": {
+            "list-name": "On state exit",
+            "display-text": "On state [b]{0}[/b] exit",
+            "description": "Called when the given state is exited.",
+            "params": {
+              "state": {
+                "name": "State",
+                "desc": "The state machine's old state."
+              }
+            }
+          },
+          "on-state-tick": {
+            "list-name": "On state tick",
+            "display-text": "On state [b]{0}[/b] tick",
+            "description": "Called every frame for state.",
+            "params": {
+              "state": {
+                "name": "State",
+                "desc": "Called every frame for the given state."
+              }
+            }
+          },
+          "compare-current-state": {
+            "list-name": "Compare current state",
+            "display-text": "Current state {0} {1}",
+            "description": "Compare the object's current state.",
+            "params": {
+              "comparison": {
+                "name": "Comparison",
+                "desc": "How to compare the object's current state."
+              },
+              "state": {
+                "name": "State",
+                "desc": "The state to compare to."
+              }
+            }
+          },
+          "compare-previous-state": {
+            "list-name": "Compare previous state",
+            "display-text": "Previous state {0} {1}",
+            "description": "Compare the object's previous state.",
+            "params": {
+              "comparison": {
+                "name": "Comparison",
+                "desc": "How to compare the object's previous state."
+              },
+              "state": {
+                "name": "State",
+                "desc": "The state to compare to."
+              }
+            }
+          }
+        },
+        "actions": {
+          "set-state": {
+            "list-name": "Set State",
+            "display-text": "Set state to [b]{0}[/b]",
+            "description": "Set the object's state.",
+            "params": {
+              "state": {
+                "name": "State",
+                "desc": "The new state of the object."
+              }
+            }
+          }
+        },
+        "expressions": {
+          "current-state": {
+            "translated-name": "CurrentState",
+            "description": "The state machine's current state."
+          },
+          "previous-state": {
+            "translated-name": "PreviousState",
+            "description": "The state machine's previous state."
+          }
+        }
+      }
+    }
+  }
+}

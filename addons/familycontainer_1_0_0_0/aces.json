@@ -1,0 +1,37 @@
+{
+  "": {
+    "conditions": [
+      {
+        "id": "pick-sibling",
+        "scriptName": "PickSibling",
+        "highlight": true,
+        "isInvertible": false,
+        "params": [
+          {
+            "id": "sibling-type",
+            "type": "object",
+            "allowedPluginIds": [
+              "Sprite"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pick-all-siblings",
+        "scriptName": "PickAllSiblings",
+        "highlight": false,
+        "params": [
+          {
+            "id": "sibling-type",
+            "type": "object",
+            "allowedPluginIds": [
+              "Sprite"
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": [],
+    "expressions": []
+  }
+}

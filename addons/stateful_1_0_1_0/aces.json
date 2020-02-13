@@ -1,0 +1,94 @@
+{
+  "": {
+    "conditions": [
+      {
+        "id": "on-state-enter",
+        "scriptName": "OnStateEnter",
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "state",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "id": "on-state-exit",
+        "scriptName": "OnStateExit",
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "state",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "id": "on-state-tick",
+        "scriptName": "OnStateTick",
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "state",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "id": "compare-current-state",
+        "scriptName": "CompareCurrentState",
+        "highlight": false,
+        "params": [
+          {
+            "id": "comparison",
+            "type": "cmp"
+          },
+          {
+            "id": "state",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "id": "compare-previous-state",
+        "scriptName": "ComparePreviousState",
+        "highlight": false,
+        "params": [
+          {
+            "id": "comparison",
+            "type": "cmp"
+          },
+          {
+            "id": "state",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "set-state",
+        "scriptName": "SetState",
+        "highlight": true,
+        "params": [
+          {
+            "id": "state",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "id": "current-state",
+        "expressionName": "CurrentState",
+        "returnType": "string"
+      },
+      {
+        "id": "previous-state",
+        "expressionName": "PreviousState",
+        "returnType": "string"
+      }
+    ]
+  }
+}
