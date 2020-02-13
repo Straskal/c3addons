@@ -67,9 +67,10 @@
             if (siblings)
             {
                 siblingType.GetCurrentSol().SetSinglePicked(siblings[0]);
+                return true;
             }
 
-            return siblings.length > 0;
+            return false;
         }
 
         /**
@@ -84,9 +85,10 @@
             if (siblings)
             {
                 siblingType.GetCurrentSol().SetArrayPicked(siblings);
+                return true;
             }
 
-            return siblings.length > 0;
+            return false;
         }
 
         /**
