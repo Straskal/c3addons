@@ -2,7 +2,7 @@
 {
     const BEHAVIOR_CLASS = SDK.Behaviors.Straskal_Stateful;
 
-    BEHAVIOR_CLASS.Type = class StateMachineType extends SDK.IBehaviorTypeBase
+    BEHAVIOR_CLASS.Type = class StatefulType extends SDK.IBehaviorTypeBase
     {
         constructor(sdkPlugin, iBehaviorType)
         {

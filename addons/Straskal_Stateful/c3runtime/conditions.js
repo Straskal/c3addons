@@ -1,6 +1,7 @@
 "use strict";
 {
-    C3.Behaviors.Straskal_Stateful.Cnds = {
+    C3.Behaviors.Straskal_Stateful.Cnds = 
+    {
         OnStateEnter(state)
         {
             return C3.equalsNoCase(state, this._currentState);

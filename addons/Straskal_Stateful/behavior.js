@@ -5,7 +5,7 @@
     const BEHAVIOR_VERSION = "1.0.1.0";
     const BEHAVIOR_CATEGORY = "general";
 
-    const BEHAVIOR_CLASS = SDK.Behaviors.Straskal_Stateful = class StateMachineBehavior extends SDK.IBehaviorBase
+    const BEHAVIOR_CLASS = SDK.Behaviors.Straskal_Stateful = class StatefulBehavior extends SDK.IBehaviorBase
     {
         constructor()
         {

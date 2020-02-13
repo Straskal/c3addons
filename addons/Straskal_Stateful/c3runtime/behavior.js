@@ -1,6 +1,6 @@
 "use strict";
 {
-    C3.Behaviors.Straskal_Stateful = class StateMachineBehavior extends C3.SDKBehaviorBase
+    C3.Behaviors.Straskal_Stateful = class StatefulBehavior extends C3.SDKBehaviorBase
     {
         constructor(opts)
         {
