@@ -10,5 +10,5 @@ If you'd like to request features, additional addons, or documentation, feel fre
 
 The following addons use undocumented SDK APIs.
 ```diff
-- Sibling
+- Straskal_Sibling
 ```
