@@ -37,14 +37,14 @@
               }
             }
           },
-          "on-state-tick": {
-            "list-name": "On state tick",
-            "display-text": "On state [b]{0}[/b] tick",
-            "description": "Called every frame for state.",
+          "every-tick-for-state": {
+            "list-name": "Every tick for state",
+            "display-text": "Every tick for state [b]{0}[/b]",
+            "description": "True if the given state is current.",
             "params": {
               "state": {
                 "name": "State",
-                "desc": "Called every frame for the given state."
+                "desc": "The state to compare to."
               }
             }
           },

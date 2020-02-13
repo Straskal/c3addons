@@ -24,9 +24,9 @@
         ]
       },
       {
-        "id": "on-state-tick",
-        "scriptName": "OnStateTick",
-        "isTrigger": true,
+        "id": "every-tick-for-state",
+        "highlight": true,
+        "scriptName": "EveryTickForState",
         "params": [
           {
             "id": "state",
@@ -37,7 +37,6 @@
       {
         "id": "compare-current-state",
         "scriptName": "CompareCurrentState",
-        "highlight": false,
         "params": [
           {
             "id": "comparison",
@@ -52,7 +51,6 @@
       {
         "id": "compare-previous-state",
         "scriptName": "ComparePreviousState",
-        "highlight": false,
         "params": [
           {
             "id": "comparison",

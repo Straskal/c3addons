@@ -12,7 +12,7 @@
             return C3.equalsNoCase(state, this._currentState);
         },
 
-        OnStateTick(state)
+        EveryTickForState(state)
         {
             return C3.equalsNoCase(state, this._currentState);
         },
