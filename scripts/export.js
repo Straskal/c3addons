@@ -2,7 +2,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const path = require('path');
 const fsExtra = require('fs-extra');
-var zipFolder = require('zip-folder');
+const zipFolder = require('zip-folder');
 
 fs.readdir(`./addons`, (_, items) => 
 {
