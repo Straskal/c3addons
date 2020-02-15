@@ -21,13 +21,6 @@
             this._nextState = properties[0];
 
             /**
-             * Tick function is a 'sub state' of this behavior.
-             * 
-             * When a state change is requested, Tick function is changed to _StateTransition.
-             */
-            this._tickFunction = this._StateTransition;
-
-            /**
              * Opt in to Tick().
              */
             this._StartTicking();
@@ -40,7 +33,7 @@
 
         Tick()
         {
-            this._tickFunction();
+            this._StateTransition();
         }
 
         GetDebuggerProperties()
@@ -67,7 +60,7 @@
         _SetState(state)
         {
             this._nextState = state;
-            this._tickFunction = this._StateTransition;
+            this._StartTicking();
         }
 
         /**
@@ -84,15 +77,7 @@
             this._currentState = this._nextState;
             this._nextState = null;
             this.Trigger(this._conditions.OnStateEnter);
-            this._tickFunction = this._StateTick;
-        }
-
-        /**
-         * Tick the current state.
-         */
-        _StateTick()
-        {
-            this.Trigger(this._conditions.OnStateTick);
+            this._StopTicking();
         }
     };
 }

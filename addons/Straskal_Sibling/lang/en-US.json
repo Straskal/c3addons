@@ -10,6 +10,17 @@
         "properties": {},
         "aceCategories": {},
         "conditions": {
+          "pick-sibling-uid": {
+            "list-name": "Pick sibling UID",
+            "display-text": "Pick {0} sibling UID",
+            "description": "Pick a sibling's UID from the object's container.",
+            "params": {
+              "sibling-type": {
+                "name": "Sibling type",
+                "desc": "The type of sibling to pick."
+              }
+            }
+          },
           "pick-sibling": {
             "list-name": "Pick Sibling",
             "display-text": "{my} Pick sibling {0}",
@@ -34,7 +45,12 @@
           }
         },
         "actions": {},
-        "expressions": {}
+        "expressions": {
+          "sibling-uid": {
+            "description": "The current picked sibling UID",
+            "translated-name": "SiblingUID"
+          }
+        }
       }
     }
   }

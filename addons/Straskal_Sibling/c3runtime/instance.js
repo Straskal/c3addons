@@ -12,6 +12,7 @@
              * This includes objects and families.
              */
             this._siblingsByName = null;
+            this._siblingUID = -1;
         }
 
         Release()
@@ -53,6 +54,26 @@
                     }
                 }
             }
+        }
+
+        /**
+         * Picks the first sibling instance of siblingType.
+         * 
+         * If the sibling exists, sets SiblingUID and returns true.
+         * @param {C3.ObjectClass} siblingType 
+         */
+        _PickSiblingUID(siblingType)
+        {
+            this._EnsureCache();
+            const siblings = this._GetSiblings(siblingType);
+
+            if (siblings)
+            {
+                this._siblingUID = siblings[0].GetUID();
+                return true;
+            }
+
+            return false;
         }
 
         /**

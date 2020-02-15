@@ -2,10 +2,24 @@
   "": {
     "conditions": [
       {
+        "id": "pick-sibling-uid",
+        "scriptName": "PickSiblingUID",
+        "highlight": true,
+        "params": [
+          {
+            "id": "sibling-type",
+            "type": "object",
+            "allowedPluginIds": [
+              "Sprite"
+            ]
+          }
+        ]
+      },
+      {
         "id": "pick-sibling",
         "scriptName": "PickSibling",
+        "isDeprecated": true,
         "highlight": true,
-        "isInvertible": false,
         "params": [
           {
             "id": "sibling-type",
@@ -19,6 +33,7 @@
       {
         "id": "pick-all-siblings",
         "scriptName": "PickAllSiblings",
+        "isDeprecated": true,
         "highlight": false,
         "params": [
           {
@@ -32,6 +47,12 @@
       }
     ],
     "actions": [],
-    "expressions": []
+    "expressions": [
+      {
+        "id": "sibling-uid",
+        "expressionName": "SiblingUID",
+        "returnType": "number"
+      }
+    ]
   }
 }
