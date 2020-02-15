@@ -2,7 +2,7 @@
 {
 
     const BEHAVIOR_ID = "Straskal_Sibling";
-    const BEHAVIOR_VERSION = "1.1.0.0";
+    const BEHAVIOR_VERSION = "1.1.1.0";
     const BEHAVIOR_CATEGORY = "attributes";
 
     const BEHAVIOR_CLASS = SDK.Behaviors.Straskal_Sibling = class SiblingBehavior extends SDK.IBehaviorBase

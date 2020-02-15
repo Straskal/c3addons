@@ -32,7 +32,7 @@
             {
                 const array2map = (map, objectName) => (map[objectName] = [], map);
 
-                const siblings = this._inst.GetSiblings();
+                const siblings = this._inst.GetSiblings() || [];
                 const objectClassTypes = siblings.map(s => s.GetObjectClass());
                 const familyClassTypes = objectClassTypes.map(o => o.GetFamilies()).flat();
                 const objectClassNames = objectClassTypes.map(o => o.GetName());
