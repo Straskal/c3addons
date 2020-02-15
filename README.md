@@ -7,8 +7,3 @@ If you'd like to request features, additional addons, or documentation, feel fre
 `addons` contains the source code.
 
 `exports` contains the .c3addon files.
-
-The following addons use undocumented SDK APIs.
-```diff
-- Straskal_Sibling
-```
