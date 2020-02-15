@@ -77,42 +77,6 @@
         }
 
         /**
-         * Picks the first sibling instance of siblingType and returns true if exists.
-         * @param {C3.ObjectClass} siblingType 
-         */
-        _PickSibling(siblingType)
-        {
-            this._EnsureCache();
-            const siblings = this._GetSiblings(siblingType);
-
-            if (siblings)
-            {
-                siblingType.GetCurrentSol().SetSinglePicked(siblings[0]);
-                return true;
-            }
-
-            return false;
-        }
-
-        /**
-         * Picks all sibling instances of siblingType and returns true if any.
-         * @param {C3.ObjectClass} siblingType 
-         */
-        _PickAllSiblings(siblingType)
-        {
-            this._EnsureCache();
-            const siblings = this._GetSiblings(siblingType);
-
-            if (siblings)
-            {
-                siblingType.GetCurrentSol().SetArrayPicked(siblings);
-                return true;
-            }
-
-            return false;
-        }
-
-        /**
          * Returns all sibling instances of siblingType.
          * @param {C3.ObjectClass} siblingType 
          */

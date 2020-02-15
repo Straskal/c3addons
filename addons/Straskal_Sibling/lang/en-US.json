@@ -20,28 +20,6 @@
                 "desc": "The type of sibling to pick."
               }
             }
-          },
-          "pick-sibling": {
-            "list-name": "Pick Sibling",
-            "display-text": "{my} Pick sibling {0}",
-            "description": "Pick a sibling from the object's container.",
-            "params": {
-              "sibling-type": {
-                "name": "Sibling Type",
-                "desc": "The type of sibling to pick."
-              }
-            }
-          },
-          "pick-all-siblings": {
-            "list-name": "Pick All Siblings",
-            "display-text": "{my} Pick all siblings {0}",
-            "description": "Pick all siblings from the object's container.",
-            "params": {
-              "sibling-type": {
-                "name": "Sibling Type",
-                "desc": "The type of sibling to pick."
-              }
-            }
           }
         },
         "actions": {},

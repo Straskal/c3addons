@@ -14,36 +14,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "pick-sibling",
-        "scriptName": "PickSibling",
-        "isDeprecated": true,
-        "highlight": true,
-        "params": [
-          {
-            "id": "sibling-type",
-            "type": "object",
-            "allowedPluginIds": [
-              "Sprite"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "pick-all-siblings",
-        "scriptName": "PickAllSiblings",
-        "isDeprecated": true,
-        "highlight": false,
-        "params": [
-          {
-            "id": "sibling-type",
-            "type": "object",
-            "allowedPluginIds": [
-              "Sprite"
-            ]
-          }
-        ]
       }
     ],
     "actions": [],
