@@ -46,9 +46,9 @@
         },
         "actions": {},
         "expressions": {
-          "sibling-uid": {
-            "description": "The current picked sibling UID",
-            "translated-name": "SiblingUID"
+          "uid": {
+            "description": "The previously picked sibling UID",
+            "translated-name": "UID"
           }
         }
       }

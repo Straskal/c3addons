@@ -2,7 +2,7 @@
 {
     C3.Behaviors.Straskal_Sibling.Exps = 
     {
-        SiblingUID()
+        UID()
         {
             return this._siblingUID;
         }

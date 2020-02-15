@@ -49,8 +49,8 @@
     "actions": [],
     "expressions": [
       {
-        "id": "sibling-uid",
-        "expressionName": "SiblingUID",
+        "id": "uid",
+        "expressionName": "UID",
         "returnType": "number"
       }
     ]
