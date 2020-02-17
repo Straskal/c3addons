@@ -2,7 +2,7 @@
 {
 
     const BEHAVIOR_ID = "Straskal_Stateful";
-    const BEHAVIOR_VERSION = "1.0.3.0";
+    const BEHAVIOR_VERSION = "1.0.4.0";
     const BEHAVIOR_CATEGORY = "general";
 
     const BEHAVIOR_CLASS = SDK.Behaviors.Straskal_Stateful = class StatefulBehavior extends SDK.IBehaviorBase

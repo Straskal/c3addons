@@ -33,7 +33,10 @@
 
         Tick()
         {
-            this._StateTransition();
+            if (this._nextState != null) 
+            {
+                this._StateTransition();
+            }            
         }
 
         GetDebuggerProperties()
@@ -60,7 +63,6 @@
         _SetState(state)
         {
             this._nextState = state;
-            this._StartTicking();
         }
 
         /**
@@ -76,8 +78,8 @@
             this._previousState = this._currentState;
             this._currentState = this._nextState;
             this._nextState = null;
+
             this.Trigger(this._conditions.OnStateEnter);
-            this._StopTicking();
         }
     };
 }
