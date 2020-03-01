@@ -7,7 +7,7 @@ class LOSRenderer {
      * @param {C3.Instance[]} worldInstances 
      */
     draw(renderer, settings, worldInstances) {
-        const losSettings = settings.losSettings;
+        const losSettings = settings.los;
 
         if (!losSettings.draw)
             return;

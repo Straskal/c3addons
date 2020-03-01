@@ -7,29 +7,38 @@
 
 			this._settings = {
 				isEnabled: properties[0],
-				bboxSettings: {
-					draw: properties[1],
-					solidsOnly: properties[2],
-					color: new C3.Color(properties[3][0], properties[3][1], properties[3][2], properties[4]).premultiply()
+				sprite: {
+					bbox: {
+						draw: properties[1],
+						solidsOnly: properties[2],
+						color: new C3.Color(properties[3][0], properties[3][1], properties[3][2], properties[4]).premultiply()
+					},
+					polys: {
+						draw: properties[5],
+						solidsOnly: properties[6],
+						color: new C3.Color(properties[7][0], properties[7][1], properties[7][2], properties[8]).premultiply()
+					}
 				},
-				collisionPolySettings: {
-					draw: properties[5],
-					solidsOnly: properties[6],
-					color: new C3.Color(properties[7][0], properties[7][1], properties[7][2], properties[8]).premultiply()
+				tilemap: {
+					bbox: {
+						draw: properties[9],
+						color: new C3.Color(properties[10][0], properties[10][1], properties[10][2], properties[11]).premultiply()
+					},
+					polys: {
+						draw: properties[12],
+						color: new C3.Color(properties[13][0], properties[13][1], properties[13][2], properties[14]).premultiply()
+					}
 				},
-				tilemapSettings: {
-					draw: properties[9],
-					color: new C3.Color(properties[10][0], properties[10][1], properties[10][2], properties[11]).premultiply()
-				},
-				losSettings: {
-					draw: properties[12],
-					color: new C3.Color(properties[13][0], properties[13][1], properties[13][2], properties[14]).premultiply()
+				los: {
+					draw: properties[15],
+					color: new C3.Color(properties[16][0], properties[16][1], properties[16][2], properties[17]).premultiply()
 				}
 			}
 
 			// In draw order.
 			this._debugRenderers = [
 				new TilemapAABBRenderer(),
+				new TilemapPolyRenderer(),
 				new AABBRenderer(),
 				new CollisionPolyRenderer(),
 				new LOSRenderer()

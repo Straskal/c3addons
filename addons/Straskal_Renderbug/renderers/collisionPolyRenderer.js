@@ -7,7 +7,7 @@ class CollisionPolyRenderer {
      * @param {C3.Instance[]} worldInstances 
      */
     draw(renderer, settings, worldInstances) {
-        const polySettings = settings.collisionPolySettings;
+        const polySettings = settings.sprite.polys;
 
         if (!polySettings.draw)
             return;

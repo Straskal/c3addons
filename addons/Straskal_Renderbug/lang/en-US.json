@@ -72,6 +72,23 @@
 						"desc": "The opacity of tilemap bounding boxes."
 					},
 
+					"tilemap-polys": {
+						"name": "Tilemap collision polygons",
+						"desc": ""
+					},
+					"draw-tilemap-polys": {
+						"name": "Draw",
+						"desc": "Whether or not to draw tilemap collision polygons."
+					},
+					"tilemap-poly-color": {
+						"name": "Color",
+						"desc": "The color of tilemap collision polygons."
+					},
+					"tilemap-poly-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of tilemap collision polygons."
+					},
+
 					"line-of-sight": {
 						"name": "Lines of sight",
 						"desc": ""

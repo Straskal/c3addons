@@ -3,7 +3,7 @@
 	// Icon created by https://www.flaticon.com/authors/freepik
 	
 	const PLUGIN_ID = "Straskal_Renderbug";
-	const PLUGIN_VERSION = "1.0.0.0";
+	const PLUGIN_VERSION = "1.1.0.0";
 	const PLUGIN_CATEGORY = "general";
 
 	const PLUGIN_CLASS = SDK.Plugins.Straskal_Renderbug = class Renderbug extends SDK.IPluginBase {
@@ -42,6 +42,11 @@
 				type: "external-runtime-script"
 			});
 
+			this._info.AddFileDependency({
+				filename: "renderers/tilemapPolyRenderer.js",
+				type: "external-runtime-script"
+			});
+
 			SDK.Lang.PushContext(".properties");
 
 			this._info.SetProperties([
@@ -66,6 +71,12 @@
 				new SDK.PluginProperty("check", "draw-tilemap-bbs", true),
 				new SDK.PluginProperty("color", "tilemap-bb-color", [1, 0, 0]),
 				new SDK.PluginProperty("percent", "tilemap-bb-opacity", 0.1),
+
+				// Tilemap collision polygons
+				new SDK.PluginProperty("group", "tilemap-polys"),
+				new SDK.PluginProperty("check", "draw-tilemap-polys", true),
+				new SDK.PluginProperty("color", "tilemap-poly-color", [1, 0, 0]),
+				new SDK.PluginProperty("percent", "tilemap-poly-opacity", 0.1),
 
 				// Line of sight
 				new SDK.PluginProperty("group", "line-of-sight"),

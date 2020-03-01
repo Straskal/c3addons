@@ -7,7 +7,7 @@ class AABBRenderer {
      * @param {C3.Instance[]} worldInstances 
      */
     draw(renderer, settings, worldInstances) {
-        const bboxSettings = settings.bboxSettings;
+        const bboxSettings = settings.sprite.bbox;
 
         if (!bboxSettings.draw)
             return;

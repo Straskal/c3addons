@@ -7,16 +7,16 @@ class TilemapAABBRenderer {
      * @param {C3.Instance[]} worldInstances 
      */
     draw(renderer, settings, worldInstances) {
-        const tilemapSettings = settings.tilemapSettings;
+        const tilemapBBoxSettings = settings.tilemap.bbox;
 
-        if (!tilemapSettings.draw)
+        if (!tilemapBBoxSettings.draw)
             return;
 
         const tilemapInstances = worldInstances.filter(inst => inst.GetPlugin() instanceof C3.Plugins.Tilemap);
 
         renderer.PushLineWidth(1);
-        renderer.SetColor(tilemapSettings.color);
-        renderer.SetColorFillMode("fill");
+        renderer.SetColor(tilemapBBoxSettings.color);
+        renderer.SetColorFillMode("smooth line fill");
 
         for (const tilemap of tilemapInstances) {
             const sdkInst = tilemap.GetSdkInstance();
