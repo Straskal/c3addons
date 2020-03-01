@@ -14,14 +14,14 @@ class AABBRenderer {
             .filter(inst => !bboxSettings.solidsOnly || inst.GetObjectClass().HasSolidBehavior());
 
         const worldInfos = spriteInstances.map(inst => inst.GetWorldInfo());
-        const bboxes = worldInfos.map(wi => wi.GetBoundingBox());
+        const aabbs = worldInfos.map(wi => wi.GetBoundingBox());
 
         renderer.PushLineWidth(1);
         renderer.SetColor(bboxSettings.color);
         renderer.SetColorFillMode("fill");
 
-        for (const bbox of bboxes)
-            renderer.LineRect2(bbox);
+        for (const aabb of aabbs)
+            renderer.LineRect2(aabb);
 
         renderer.PopLineWidth();
     }

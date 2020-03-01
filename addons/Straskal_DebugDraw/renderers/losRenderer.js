@@ -4,14 +4,17 @@
 class LOSRenderer {
 
     draw(renderer, settings, worldInstances) {
-        const bboxSettings = settings.bboxSettings;
+        const losSettings = settings.losSettings;
+
+        if (!losSettings.draw)
+            return;
 
         const losInstances = worldInstances
             .filter(inst => inst.GetBehaviorInstances().some(behInst => behInst.GetBehavior() instanceof C3.Behaviors.LOS))
             .map(inst => inst.GetBehaviorInstances().filter(behInst => behInst.GetBehavior() instanceof C3.Behaviors.LOS))
             .flat();
 
-        renderer.SetColor(bboxSettings.color);
+        renderer.SetColor(losSettings.color);
         renderer.SetColorFillMode("fill");
 
         for (const los of losInstances) {

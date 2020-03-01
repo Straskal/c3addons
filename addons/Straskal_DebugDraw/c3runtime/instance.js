@@ -16,6 +16,10 @@
 					draw: properties[5],
 					solidsOnly: properties[6],
 					color: new C3.Color(properties[7][0], properties[7][1], properties[7][2], properties[8]).premultiply()
+				},
+				losSettings: {
+					draw: properties[9],
+					color: new C3.Color(properties[10][0], properties[10][1], properties[10][2], properties[11]).premultiply()
 				}
 			}
 

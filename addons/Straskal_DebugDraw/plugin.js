@@ -45,19 +45,20 @@
 				new SDK.PluginProperty("check", "draw-bbs", true),
 				new SDK.PluginProperty("check", "bb-solids-only", false),
 				new SDK.PluginProperty("color", "bb-color", [1, 0, 0]),
-				new SDK.PluginProperty("percent", "bb-opacity", 0.5),
+				new SDK.PluginProperty("percent", "bb-opacity", 0.1),
 
 				// Collision polygons
 				new SDK.PluginProperty("group", "collision-polys"),
 				new SDK.PluginProperty("check", "draw-polys", true),
 				new SDK.PluginProperty("check", "poly-solids-only", false),
 				new SDK.PluginProperty("color", "poly-color", [1, 0, 0]),
-				new SDK.PluginProperty("percent", "poly-opacity", 0.5),
+				new SDK.PluginProperty("percent", "poly-opacity", 0.1),
 
 				// Line of sight
 				new SDK.PluginProperty("group", "line-of-sight"),
 				new SDK.PluginProperty("check", "draw-los", true),
 				new SDK.PluginProperty("color", "los-color", [0, 1, 0]),
+				new SDK.PluginProperty("percent", "los-opacity", 0.1),
 			]);
 
 			SDK.Lang.PopContext();

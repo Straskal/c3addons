@@ -63,6 +63,10 @@
 					"los-color": {
 						"name": "Color",
 						"desc": "The color of LOS."
+					},
+					"los-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of LOS cone."
 					}
 				},
 				"aceCategories": {

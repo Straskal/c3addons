@@ -1,8 +1,11 @@
-/**
- * Sprite collision polygon renderer.
- */
 class CollisionPolyRenderer {
 
+    /**
+     * Draw sprite collision polygons.
+     * @param {C3.IWebGLRenderer} renderer 
+     * @param {*} settings 
+     * @param {C3.Instance[]} worldInstances 
+     */
     draw(renderer, settings, worldInstances) {
         const polySettings = settings.collisionPolySettings;
 
@@ -18,32 +21,29 @@ class CollisionPolyRenderer {
         renderer.SetColorFillMode("fill");
 
         for (const spriteInstance of spriteInstances) {
-            const bbox = spriteInstance.GetWorldInfo().GetBoundingBox();
-            const instanceWidth = spriteInstance.GetWorldInfo().GetWidth();
-            const instanceHeight = spriteInstance.GetWorldInfo().GetHeight();
-
-            const originNormalized = spriteInstance.GetSdkInstance()._currentAnimationFrame._origin;
-            const originPixelX = originNormalized._x * instanceWidth;
-            const originPixelY = originNormalized._y * instanceHeight;
-
+            const instAABB = spriteInstance.GetWorldInfo().GetBoundingBox();
+            const instWidth = spriteInstance.GetWorldInfo().GetWidth();
+            const instHeight = spriteInstance.GetWorldInfo().GetHeight();
+            const instAnimFrame = spriteInstance.GetSdkInstance()._currentAnimationFrame;
+            const originTextureCoords = instAnimFrame._origin;
+            const originPixelCoordsX = originTextureCoords._x * instWidth;
+            const originPixelCoordsY = originTextureCoords._y * instHeight;
+    
             const originPixelCoord = [
-                Math.sign(instanceWidth) > 0 ? bbox.getLeft() + originPixelX : bbox.getRight() + originPixelX,
-                Math.sign(instanceHeight) > 0 ? bbox.getTop() + originPixelY : bbox.getBottom() + originPixelY
+                Math.sign(instWidth) > 0 ? instAABB.getLeft() + originPixelCoordsX : instAABB.getRight() + originPixelCoordsX,
+                Math.sign(instHeight) > 0 ? instAABB.getTop() + originPixelCoordsY : instAABB.getBottom() + originPixelCoordsY
             ];
-
-            const collisionPoly = spriteInstance.GetSdkInstance()._currentAnimationFrame._collisionPoly;
-
-            if (collisionPoly !== null) {
-                const polyPoints = spriteInstance.GetSdkInstance()._currentAnimationFrame._collisionPoly._ptsArr;
-
+    
+            if (instAnimFrame._collisionPoly !== null) {
+                const polyPoints = instAnimFrame._collisionPoly._ptsArr;
                 renderer.ConvexPoly(polyPoints.map((pt, index) => {
                     if (index % 2 == 0) {
-                        return originPixelCoord[0] + (pt * instanceWidth);
+                        return originPixelCoord[0] + (pt * instWidth);
                     }
-                    return originPixelCoord[1] + (pt * instanceHeight);
+                    return originPixelCoord[1] + (pt * instHeight);
                 }));
             } else {
-                renderer.Rect(bbox);
+                renderer.Rect(instAABB);
             }
         }
     }
