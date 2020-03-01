@@ -13,7 +13,7 @@
 						"desc": "Whether or not the debug renderer is initially enabled."
 					},
 					"bounding-box": {
-						"name": "Bounding box",
+						"name": "Bounding boxes",
 						"desc": ""
 					},
 					"draw-bbs": {
@@ -53,7 +53,7 @@
 						"desc": "The opacity of collision polygons."
 					},
 					"line-of-sight": {
-						"name": "Line of sight",
+						"name": "Lines of sight",
 						"desc": ""
 					},
 					"draw-los": {

@@ -41,9 +41,8 @@
 			const worldTypeObjectClasses = this.GetRuntime().GetAllObjectClasses().filter(oc => oc.IsWorldType());
 			const worldTypeInstances = worldTypeObjectClasses.map(oc => oc.GetInstances()).flat();
 
-			for (const debugRenderer of this._debugRenderers) {
+			for (const debugRenderer of this._debugRenderers)
 				debugRenderer.draw(renderer, this._settings, worldTypeInstances);
-			}
 		}
 
 		SaveToJson() {
