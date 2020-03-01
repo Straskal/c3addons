@@ -21,7 +21,8 @@
 
 			this._debugRenderers = [
 				new AABBRenderer(),
-				new CollisionPolyRenderer()
+				new CollisionPolyRenderer(),
+				new LOSRenderer()
 			];
 		}
 

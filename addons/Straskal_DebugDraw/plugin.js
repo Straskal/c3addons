@@ -30,6 +30,11 @@
 				type: "external-script"
 			});
 
+			this._info.AddFileDependency({
+				filename: "renderers/losRenderer.js",
+				type: "external-script"
+			});
+
 			SDK.Lang.PushContext(".properties");
 
 			this._info.SetProperties([

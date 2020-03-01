@@ -28,6 +28,7 @@
 		"type.js",
 		"instance.js",
 		"renderers/aabbRenderer.js",
-		"renderers/collisionPolyRenderer.js"
+		"renderers/collisionPolyRenderer.js",
+		"renderers/losRenderer.js"
 	]
 }
