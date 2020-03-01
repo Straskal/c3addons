@@ -1,8 +1,11 @@
-/**
- * Sprite AABB renderer.
- */
 class AABBRenderer {
 
+    /**
+     * Draw sprite bounding boxes.
+     * @param {C3.IWebGLRenderer} renderer 
+     * @param {*} settings 
+     * @param {C3.Instance[]} worldInstances 
+     */
     draw(renderer, settings, worldInstances) {
         const bboxSettings = settings.bboxSettings;
 

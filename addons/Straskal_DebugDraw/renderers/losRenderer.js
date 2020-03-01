@@ -1,8 +1,11 @@
-/**
- * Line of sight renderer.
- */
 class LOSRenderer {
 
+    /**
+     * Draw LOS cone.
+     * @param {C3.IWebGLRenderer} renderer 
+     * @param {*} settings 
+     * @param {C3.Instance[]} worldInstances 
+     */
     draw(renderer, settings, worldInstances) {
         const losSettings = settings.losSettings;
 
@@ -18,40 +21,40 @@ class LOSRenderer {
         renderer.SetColorFillMode("fill");
 
         for (const los of losInstances) {
-            const sdkInstance = los.GetSdkInstance();
-            const objectInstance = los.GetObjectInstance();
-            const worldInfo = objectInstance.GetWorldInfo();
+            const sdkInst = los.GetSdkInstance();
+            const objectInst = los.GetObjectInstance();
+            const worldInfo = objectInst.GetWorldInfo();
 
-            const instanceAngle = worldInfo.GetAngle();
-            const instanceX = worldInfo.GetX();
-            const instanceY = worldInfo.GetY();
-            const losAngle = sdkInstance._cone;
-            const losLength = sdkInstance._range;
+            const instAngle = worldInfo.GetAngle();
+            const instX = worldInfo.GetX();
+            const instY = worldInfo.GetY();
+            const losAngle = sdkInst._cone;
+            const losLength = sdkInst._range;
 
-            const l1Angle = instanceAngle - (losAngle * 0.5);
-            const l2Angle = instanceAngle + (losAngle * 0.5);
+            const l1Angle = instAngle - (losAngle * 0.5);
+            const l2Angle = instAngle + (losAngle * 0.5);
 
-            const dir = Math.sign(worldInfo.GetWidth());
-            const r1 = (Math.cos(l1Angle) * losLength) * dir;
-            const r2 = (Math.sin(l1Angle) * losLength) * dir;
-            const r3 = (Math.cos(l2Angle) * losLength) * dir;
-            const r4 = (Math.sin(l2Angle) * losLength) * dir;
+            const instDirection = Math.sign(worldInfo.GetWidth());
+            const coneLeft1 = (Math.cos(l1Angle) * losLength) * instDirection;
+            const coneLeft2 = (Math.sin(l1Angle) * losLength) * instDirection;
+            const coneRight1 = (Math.cos(l2Angle) * losLength) * instDirection;
+            const coneRight2 = (Math.sin(l2Angle) * losLength) * instDirection;
 
             renderer.ConvexPoly([
-                instanceX,
-                instanceY,
-                instanceX + r1,
-                instanceY + r2,
+                instX,
+                instY,
+                instX + coneLeft1,
+                instY + coneLeft2,
 
-                instanceX + r1,
-                instanceY + r2,
-                instanceX + r3,
-                instanceY + r4,
+                instX + coneLeft1,
+                instY + coneLeft2,
+                instX + coneRight1,
+                instY + coneRight2,
 
-                instanceX + r3,
-                instanceY + r4,
-                instanceX,
-                instanceY,
+                instX + coneRight1,
+                instY + coneRight2,
+                instX,
+                instY,
             ]);
         }
     }
