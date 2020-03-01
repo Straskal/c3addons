@@ -1,0 +1,35 @@
+﻿{
+	"is-c3-addon": true,
+	"type": "plugin",
+	"name": "Renderbug",
+	"id": "Straskal_Renderbug",
+	"version": "1.0.0.0",
+	"author": "Straskal",
+	"website": "https://github.com/Straskal/c3addons",
+	"documentation": "https://github.com/Straskal/c3addons",
+	"description": "Allows debug drawing and visualization during runtime.",
+	"editor-scripts": [
+		"plugin.js",
+		"type.js",
+		"instance.js"
+	],
+	"file-list": [
+		"c3runtime/plugin.js",
+		"c3runtime/type.js",
+		"c3runtime/instance.js",
+		"c3runtime/conditions.js",
+		"c3runtime/actions.js",
+		"c3runtime/expressions.js",
+		"lang/en-US.json",
+		"aces.json",
+		"addon.json",
+		"icon.svg",
+		"plugin.js",
+		"type.js",
+		"instance.js",
+		"renderers/aabbRenderer.js",
+		"renderers/collisionPolyRenderer.js",
+		"renderers/losRenderer.js",
+		"renderers/tilemapRenderer.js"
+	]
+}

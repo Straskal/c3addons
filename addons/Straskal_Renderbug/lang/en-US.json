@@ -1,0 +1,101 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for Renderbug.",
+	"text": {
+		"plugins": {
+			"straskal_renderbug": {
+				"name": "Renderbug",
+				"description": "Enables various debug drawing capablities during runtime.",
+				"help-url": "https://github.com/Straskal/c3addons",
+				"properties": {
+					"is-enabled": {
+						"name": "Enabled",
+						"desc": "Whether or not the debug renderer is initially enabled."
+					},
+
+					"bounding-box": {
+						"name": "Sprite bounding boxes",
+						"desc": ""
+					},
+					"draw-bbs": {
+						"name": "Draw",
+						"desc": "Whether or not to draw bounding boxes."
+					},
+					"bb-solids-only": {
+						"name": "Solids only",
+						"desc": "Whether or not to only draw solids."
+					},
+					"bb-color": {
+						"name": "Color",
+						"desc": "The color of bounding boxes."
+					},
+					"bb-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of bounding boxes."
+					},
+
+					"collision-polys": {
+						"name": "Sprite collision polygons",
+						"desc": ""
+					},
+					"draw-polys": {
+						"name": "Draw",
+						"desc": "Whether or not to draw collision polygons."
+					},
+					"poly-solids-only": {
+						"name": "Solids only",
+						"desc": "Whether or not to only draw solids."
+					},
+					"poly-color": {
+						"name": "Color",
+						"desc": "The color of collision polygons."
+					},
+					"poly-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of collision polygons."
+					},
+
+					"tilemap-bounding-box": {
+						"name": "Tilemap bounding boxes",
+						"desc": ""
+					},
+					"draw-tilemap-bbs": {
+						"name": "Draw",
+						"desc": "Whether or not to draw tilemap bounding boxes."
+					},
+					"tilemap-bb-color": {
+						"name": "Color",
+						"desc": "The color of tilemap bounding boxes."
+					},
+					"tilemap-bb-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of tilemap bounding boxes."
+					},
+
+					"line-of-sight": {
+						"name": "Lines of sight",
+						"desc": ""
+					},
+					"draw-los": {
+						"name": "Draw",
+						"desc": "Whether or not to draw bounding boxes."
+					},
+					"los-color": {
+						"name": "Color",
+						"desc": "The color of LOS."
+					},
+					"los-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of LOS cone."
+					}
+				},
+				"aceCategories": {
+					"custom": "Custom"
+				},
+				"conditions": {},
+				"actions": {},
+				"expressions": {}
+			}
+		}
+	}
+}

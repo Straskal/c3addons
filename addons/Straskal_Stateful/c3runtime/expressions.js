@@ -6,7 +6,6 @@
         {
             return this._currentState;
         },
-
         PreviousState()
         {
             return this._previousState;
