@@ -35,24 +35,35 @@
 				type: "external-script"
 			});
 
+			this._info.AddFileDependency({
+				filename: "renderers/tilemapRenderer.js",
+				type: "external-script"
+			});
+
 			SDK.Lang.PushContext(".properties");
 
 			this._info.SetProperties([
 				new SDK.PluginProperty("check", "is-enabled", true),
 
-				// AABB
+				// Sprite AABB
 				new SDK.PluginProperty("group", "bounding-box"),
 				new SDK.PluginProperty("check", "draw-bbs", true),
 				new SDK.PluginProperty("check", "bb-solids-only", false),
 				new SDK.PluginProperty("color", "bb-color", [1, 0, 0]),
 				new SDK.PluginProperty("percent", "bb-opacity", 0.1),
 
-				// Collision polygons
+				// Sprite collision polygons
 				new SDK.PluginProperty("group", "collision-polys"),
 				new SDK.PluginProperty("check", "draw-polys", true),
 				new SDK.PluginProperty("check", "poly-solids-only", false),
 				new SDK.PluginProperty("color", "poly-color", [1, 0, 0]),
 				new SDK.PluginProperty("percent", "poly-opacity", 0.1),
+
+				// Tilemap AABB
+				new SDK.PluginProperty("group", "tilemap-bounding-box"),
+				new SDK.PluginProperty("check", "draw-tilemap-bbs", true),
+				new SDK.PluginProperty("color", "tilemap-bb-color", [1, 0, 0]),
+				new SDK.PluginProperty("percent", "tilemap-bb-opacity", 0.1),
 
 				// Line of sight
 				new SDK.PluginProperty("group", "line-of-sight"),

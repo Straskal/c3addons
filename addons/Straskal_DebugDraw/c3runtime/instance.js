@@ -17,13 +17,18 @@
 					solidsOnly: properties[6],
 					color: new C3.Color(properties[7][0], properties[7][1], properties[7][2], properties[8]).premultiply()
 				},
-				losSettings: {
+				tilemapSettings: {
 					draw: properties[9],
 					color: new C3.Color(properties[10][0], properties[10][1], properties[10][2], properties[11]).premultiply()
+				},
+				losSettings: {
+					draw: properties[12],
+					color: new C3.Color(properties[13][0], properties[13][1], properties[13][2], properties[14]).premultiply()
 				}
 			}
 
 			this._debugRenderers = [
+				new TilemapRenderer(),
 				new AABBRenderer(),
 				new CollisionPolyRenderer(),
 				new LOSRenderer()

@@ -12,8 +12,9 @@
 						"name": "Enabled",
 						"desc": "Whether or not the debug renderer is initially enabled."
 					},
+
 					"bounding-box": {
-						"name": "Bounding boxes",
+						"name": "Sprite bounding boxes",
 						"desc": ""
 					},
 					"draw-bbs": {
@@ -32,8 +33,9 @@
 						"name": "Opacity",
 						"desc": "The opacity of bounding boxes."
 					},
+
 					"collision-polys": {
-						"name": "Collision polygons",
+						"name": "Sprite collision polygons",
 						"desc": ""
 					},
 					"draw-polys": {
@@ -52,6 +54,24 @@
 						"name": "Opacity",
 						"desc": "The opacity of collision polygons."
 					},
+
+					"tilemap-bounding-box": {
+						"name": "Tilemap bounding boxes",
+						"desc": ""
+					},
+					"draw-tilemap-bbs": {
+						"name": "Draw",
+						"desc": "Whether or not to draw tilemap bounding boxes."
+					},
+					"tilemap-bb-color": {
+						"name": "Color",
+						"desc": "The color of tilemap bounding boxes."
+					},
+					"tilemap-bb-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of tilemap bounding boxes."
+					},
+
 					"line-of-sight": {
 						"name": "Lines of sight",
 						"desc": ""
