@@ -30,6 +30,6 @@
 		"renderers/aabbRenderer.js",
 		"renderers/collisionPolyRenderer.js",
 		"renderers/losRenderer.js",
-		"renderers/tilemapRenderer.js"
+		"renderers/tilemapAABBRenderer.js"
 	]
 }

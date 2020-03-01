@@ -1,4 +1,4 @@
-class TilemapRenderer {
+class TilemapAABBRenderer {
 
     /**
      * Draw tile map AABBS.
@@ -14,6 +14,7 @@ class TilemapRenderer {
 
         const tilemapInstances = worldInstances.filter(inst => inst.GetPlugin() instanceof C3.Plugins.Tilemap);
 
+        renderer.PushLineWidth(1);
         renderer.SetColor(tilemapSettings.color);
         renderer.SetColorFillMode("fill");
 
@@ -23,9 +24,11 @@ class TilemapRenderer {
 
             for (const collisionRectArr of collisionRectArr2d) {                
                 for (const collisionRect of collisionRectArr) {                
-                    renderer.Rect(collisionRect.GetRect());
+                    renderer.LineRect2(collisionRect.GetRect());
                 }
             }
         }
+
+        renderer.PopLineWidth();
     }
 }

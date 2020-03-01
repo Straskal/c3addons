@@ -13,9 +13,8 @@ class LOSRenderer {
             return;
 
         const losInstances = worldInstances
-            .filter(inst => inst.GetBehaviorInstances().some(behInst => behInst.GetBehavior() instanceof C3.Behaviors.LOS))
-            .map(inst => inst.GetBehaviorInstances().filter(behInst => behInst.GetBehavior() instanceof C3.Behaviors.LOS))
-            .flat();
+            .filter(inst => inst.GetBehaviorInstanceFromCtor(C3.Behaviors.LOS) != null)
+            .map(inst => inst.GetBehaviorInstanceFromCtor(C3.Behaviors.LOS));
 
         renderer.SetColor(losSettings.color);
         renderer.SetColorFillMode("fill");
@@ -35,24 +34,24 @@ class LOSRenderer {
             const l2Angle = instAngle + (losAngle * 0.5);
 
             const instDirection = Math.sign(worldInfo.GetWidth());
-            const coneLeft1 = (Math.cos(l1Angle) * losLength) * instDirection;
-            const coneLeft2 = (Math.sin(l1Angle) * losLength) * instDirection;
-            const coneRight1 = (Math.cos(l2Angle) * losLength) * instDirection;
-            const coneRight2 = (Math.sin(l2Angle) * losLength) * instDirection;
+            const line1x = (Math.cos(l1Angle) * losLength) * instDirection;
+            const line1y = (Math.sin(l1Angle) * losLength) * instDirection;
+            const line2x = (Math.cos(l2Angle) * losLength) * instDirection;
+            const line2y = (Math.sin(l2Angle) * losLength) * instDirection;
 
             renderer.ConvexPoly([
                 instX,
                 instY,
-                instX + coneLeft1,
-                instY + coneLeft2,
+                instX + line1x,
+                instY + line1y,
 
-                instX + coneLeft1,
-                instY + coneLeft2,
-                instX + coneRight1,
-                instY + coneRight2,
+                instX + line1x,
+                instY + line1y,
+                instX + line2x,
+                instY + line2y,
 
-                instX + coneRight1,
-                instY + coneRight2,
+                instX + line2x,
+                instY + line2y,
                 instX,
                 instY,
             ]);

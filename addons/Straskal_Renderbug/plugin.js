@@ -38,7 +38,7 @@
 			});
 
 			this._info.AddFileDependency({
-				filename: "renderers/tilemapRenderer.js",
+				filename: "renderers/tilemapAABBRenderer.js",
 				type: "external-runtime-script"
 			});
 

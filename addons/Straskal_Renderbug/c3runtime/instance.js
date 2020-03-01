@@ -27,8 +27,9 @@
 				}
 			}
 
+			// In draw order.
 			this._debugRenderers = [
-				new TilemapRenderer(),
+				new TilemapAABBRenderer(),
 				new AABBRenderer(),
 				new CollisionPolyRenderer(),
 				new LOSRenderer()
