@@ -1,0 +1,77 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for DebugDraw.",
+	"text": {
+		"plugins": {
+			"straskal_debugdraw": {
+				"name": "DebugDraw",
+				"description": "Enables various debug drawing capablities during runtime.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"is-enabled": {
+						"name": "Enabled",
+						"desc": "Whether or not the debug renderer is initially enabled."
+					},
+					"bounding-box": {
+						"name": "Bounding box",
+						"desc": ""
+					},
+					"draw-bbs": {
+						"name": "Draw",
+						"desc": "Whether or not to draw bounding boxes."
+					},
+					"bb-solids-only": {
+						"name": "Solids only",
+						"desc": "Whether or not to only draw solids."
+					},
+					"bb-color": {
+						"name": "Color",
+						"desc": "The color of bounding boxes."
+					},
+					"bb-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of bounding boxes."
+					},
+					"collision-polys": {
+						"name": "Collision polygons",
+						"desc": ""
+					},
+					"draw-polys": {
+						"name": "Draw",
+						"desc": "Whether or not to draw collision polygons."
+					},
+					"poly-solids-only": {
+						"name": "Solids only",
+						"desc": "Whether or not to only draw solids."
+					},
+					"poly-color": {
+						"name": "Color",
+						"desc": "The color of collision polygons."
+					},
+					"poly-opacity": {
+						"name": "Opacity",
+						"desc": "The opacity of collision polygons."
+					},
+					"line-of-sight": {
+						"name": "Line of sight",
+						"desc": ""
+					},
+					"draw-los": {
+						"name": "Draw",
+						"desc": "Whether or not to draw bounding boxes."
+					},
+					"los-color": {
+						"name": "Color",
+						"desc": "The color of LOS."
+					}
+				},
+				"aceCategories": {
+					"custom": "Custom"
+				},
+				"conditions": {},
+				"actions": {},
+				"expressions": {}
+			}
+		}
+	}
+}
