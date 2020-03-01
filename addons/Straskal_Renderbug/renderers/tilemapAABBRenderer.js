@@ -16,7 +16,7 @@ class TilemapAABBRenderer {
 
         renderer.PushLineWidth(1);
         renderer.SetColor(tilemapBBoxSettings.color);
-        renderer.SetColorFillMode("smooth line fill");
+        renderer.SetColorFillMode("fill");
 
         for (const tilemap of tilemapInstances) {
             const sdkInst = tilemap.GetSdkInstance();

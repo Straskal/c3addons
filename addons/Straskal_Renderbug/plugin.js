@@ -21,6 +21,7 @@
 			this._info.SetHelpUrl(lang(".help-url"));
 			this._info.SetPluginType("world");
 			this._info.SetSupportedRuntimes(["c3"]);
+			this._info.SetIsResizable(true);
 
 			this._info.AddFileDependency({
 				filename: "renderers/aabbRenderer.js",

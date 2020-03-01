@@ -20,41 +20,51 @@ class LOSRenderer {
         renderer.SetColorFillMode("fill");
 
         for (const los of losInstances) {
+            const minTriangles = 36;
+            const maxAngle = 360;
+
             const sdkInst = los.GetSdkInstance();
             const objectInst = los.GetObjectInstance();
             const worldInfo = objectInst.GetWorldInfo();
+            const losAngle = C3.toDegrees(sdkInst._cone);
 
+            if (losAngle === 0)
+                continue;
+
+            const instDirection = Math.sign(worldInfo.GetWidth());
             const instAngle = worldInfo.GetAngle();
             const instX = worldInfo.GetX();
             const instY = worldInfo.GetY();
-            const losAngle = sdkInst._cone;
-            const losLength = sdkInst._range;
+            const stride = (losAngle / maxAngle) * minTriangles;
+            const min = instAngle - (losAngle * 0.5);
+            const max = instAngle + (losAngle * 0.5);
 
-            const l1Angle = instAngle - (losAngle * 0.5);
-            const l2Angle = instAngle + (losAngle * 0.5);
+            for (let i = min; i < max; i += stride) {
+                const l1Angle = instAngle + C3.toRadians(i);
+                const l2Angle = instAngle + C3.toRadians(i + stride);
 
-            const instDirection = Math.sign(worldInfo.GetWidth());
-            const line1x = (Math.cos(l1Angle) * losLength) * instDirection;
-            const line1y = (Math.sin(l1Angle) * losLength) * instDirection;
-            const line2x = (Math.cos(l2Angle) * losLength) * instDirection;
-            const line2y = (Math.sin(l2Angle) * losLength) * instDirection;
+                const line1x = (Math.cos(l1Angle) * sdkInst._range) * instDirection;
+                const line1y = (Math.sin(l1Angle) * sdkInst._range) * instDirection;
+                const line2x = (Math.cos(l2Angle) * sdkInst._range) * instDirection;
+                const line2y = (Math.sin(l2Angle) * sdkInst._range) * instDirection;
 
-            renderer.ConvexPoly([
-                instX,
-                instY,
-                instX + line1x,
-                instY + line1y,
+                renderer.ConvexPoly([
+                    instX,
+                    instY,
+                    instX + line1x,
+                    instY + line1y,
 
-                instX + line1x,
-                instY + line1y,
-                instX + line2x,
-                instY + line2y,
+                    instX + line1x,
+                    instY + line1y,
+                    instX + line2x,
+                    instY + line2y,
 
-                instX + line2x,
-                instY + line2y,
-                instX,
-                instY,
-            ]);
+                    instX + line2x,
+                    instY + line2y,
+                    instX,
+                    instY,
+                ]);
+            }
         }
     }
 }
