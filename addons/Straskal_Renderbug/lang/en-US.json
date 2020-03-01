@@ -1,12 +1,12 @@
 ﻿{
 	"languageTag": "en-US",
-	"fileDescription": "Strings for DebugDraw.",
+	"fileDescription": "Strings for Renderbug.",
 	"text": {
 		"plugins": {
-			"straskal_debugdraw": {
-				"name": "DebugDraw",
+			"straskal_renderbug": {
+				"name": "Renderbug",
 				"description": "Enables various debug drawing capablities during runtime.",
-				"help-url": "https://www.construct.net",
+				"help-url": "https://github.com/Straskal/c3addons",
 				"properties": {
 					"is-enabled": {
 						"name": "Enabled",

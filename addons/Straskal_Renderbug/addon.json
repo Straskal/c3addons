@@ -1,13 +1,13 @@
 ﻿{
 	"is-c3-addon": true,
 	"type": "plugin",
-	"name": "Debug Draw",
-	"id": "Straskal_DebugDraw",
+	"name": "Renderbug",
+	"id": "Straskal_Renderbug",
 	"version": "1.0.0.0",
 	"author": "Straskal",
-	"website": "https://www.construct.net",
-	"documentation": "https://www.construct.net",
-	"description": "Example custom drawing Construct 3 plugin.",
+	"website": "https://github.com/Straskal/c3addons",
+	"documentation": "https://github.com/Straskal/c3addons",
+	"description": "Allows debug drawing and visualization during runtime.",
 	"editor-scripts": [
 		"plugin.js",
 		"type.js",

@@ -1,6 +1,6 @@
 "use strict";
 {
-	const PLUGIN_CLASS = SDK.Plugins.Straskal_DebugDraw;
+	const PLUGIN_CLASS = SDK.Plugins.Straskal_Renderbug;
 
 	PLUGIN_CLASS.Instance = class MyDrawingInstance extends SDK.IWorldInstanceBase {
 		

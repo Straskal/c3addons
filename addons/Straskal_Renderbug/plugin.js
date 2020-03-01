@@ -1,10 +1,12 @@
 "use strict";
 {
-	const PLUGIN_ID = "Straskal_DebugDraw";
+	// Icon created by https://www.flaticon.com/authors/freepik
+	
+	const PLUGIN_ID = "Straskal_Renderbug";
 	const PLUGIN_VERSION = "1.0.0.0";
 	const PLUGIN_CATEGORY = "general";
 
-	const PLUGIN_CLASS = SDK.Plugins.Straskal_DebugDraw = class DebugDraw extends SDK.IPluginBase {
+	const PLUGIN_CLASS = SDK.Plugins.Straskal_Renderbug = class Renderbug extends SDK.IPluginBase {
 		
 		constructor() {
 			super(PLUGIN_ID);
@@ -22,22 +24,22 @@
 
 			this._info.AddFileDependency({
 				filename: "renderers/aabbRenderer.js",
-				type: "external-script"
+				type: "external-runtime-script"
 			});
 
 			this._info.AddFileDependency({
 				filename: "renderers/collisionPolyRenderer.js",
-				type: "external-script"
+				type: "external-runtime-script"
 			});
 
 			this._info.AddFileDependency({
 				filename: "renderers/losRenderer.js",
-				type: "external-script"
+				type: "external-runtime-script"
 			});
 
 			this._info.AddFileDependency({
 				filename: "renderers/tilemapRenderer.js",
-				type: "external-script"
+				type: "external-runtime-script"
 			});
 
 			SDK.Lang.PushContext(".properties");

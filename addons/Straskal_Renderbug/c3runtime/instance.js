@@ -1,6 +1,6 @@
 "use strict";
 {
-	C3.Plugins.Straskal_DebugDraw.Instance = class DebugDrawInstance extends C3.SDKWorldInstanceBase {
+	C3.Plugins.Straskal_Renderbug.Instance = class RenderbugInstance extends C3.SDKWorldInstanceBase {
 
 		constructor(inst, properties) {
 			super(inst);
