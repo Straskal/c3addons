@@ -20,7 +20,7 @@ class LOSRenderer {
         renderer.SetColorFillMode("fill");
 
         for (const los of losInstances) {
-            const maxTriangles = 36;
+            const minTriangles = 36;
             const maxAngle = 360;
 
             const sdkInst = los.GetSdkInstance();
@@ -35,7 +35,7 @@ class LOSRenderer {
             const instAngle = worldInfo.GetAngle();
             const instX = worldInfo.GetX();
             const instY = worldInfo.GetY();
-            const stride = (losAngle / maxAngle) * maxTriangles;
+            const stride = (losAngle / maxAngle) * minTriangles;
             const min = instAngle - (losAngle * 0.5);
             const max = instAngle + (losAngle * 0.5);
 
