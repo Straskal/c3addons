@@ -1,3 +1,6 @@
+/**
+ * USES SUPPORTED C3 APIs
+ */
 class AABBRenderer {
 
     /**
@@ -23,8 +26,9 @@ class AABBRenderer {
         renderer.SetColor(bboxSettings.color);
         renderer.SetColorFillMode("fill");
 
-        for (const aabb of aabbs)
-            renderer.LineRect2(aabb);
+        for (let i = 0; i < aabbs.length; i++) {
+            renderer.LineRect2(aabbs[i]);
+        }
 
         renderer.PopLineWidth();
     }

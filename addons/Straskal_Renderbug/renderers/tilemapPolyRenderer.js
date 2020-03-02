@@ -1,3 +1,8 @@
+/**
+ * USES UNSUPPORTED C3 APIs
+ * 
+ * - C3.Plugins.Tilemap._tileCells
+ */
 class TilemapPolyRenderer {
 
     /**
@@ -17,23 +22,19 @@ class TilemapPolyRenderer {
         renderer.SetColor(tilemapPolySettings.color);
         renderer.SetColorFillMode("fill");
 
-        for (const tilemap of tilemapInstances) {
-            const sdkInst = tilemap.GetSdkInstance();
+        for (let i = 0; i < tilemapInstances.length; i++) {
+            const sdkInst = tilemapInstances[i].GetSdkInstance();
             const collisionRectArr2d = sdkInst._tileCells.map(cell => cell.map(c => c._collisionRects)).flat();
 
-            for (const collisionRectArr of collisionRectArr2d) {
-                for (const collisionRect of collisionRectArr) {
-                    const poly = collisionRect._poly;
-                    
+            for (let j = 0; j < collisionRectArr2d.length; j++) {
+                for (let y = 0; y < collisionRectArr2d[j].length; y++) {
+                    const poly = collisionRectArr2d[j][y]._poly;
+
                     if (poly !== null) {
-                        const rect = collisionRect.GetRect();
-                        const pts = poly._ptsArr;
-                        renderer.ConvexPoly(pts.map((pt, index) => {
-                            if (index % 2 == 0) {
-                                return rect.getLeft() + pt;
-                            }
-                            return rect.getTop() + pt;
-                        }));
+                        const rect = collisionRectArr2d[j][y].GetRect();
+                        const points = poly._ptsArr.map((pt, index) => index % 2 == 0 ? rect.getLeft() + pt : rect.getTop() + pt);
+
+                        renderer.ConvexPoly(points);
                     }
                 }
             }
