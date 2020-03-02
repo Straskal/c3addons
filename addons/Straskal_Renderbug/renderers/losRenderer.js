@@ -1,3 +1,9 @@
+/**
+ * USES UNSUPPORTED C3 APIs
+ * 
+ * - C3.Behaviors.LOS.Instance._cone
+ * - C3.Behaviors.LOS.Instance._range
+ */
 class LOSRenderer {
 
     /**
@@ -9,6 +15,10 @@ class LOSRenderer {
     draw(renderer, settings, worldInstances) {
         const losSettings = settings.los;
 
+        // The larger the cone, the less triangles we use to render it.
+        const minTriangles = 36;
+        const maxAngle = 360;
+
         if (!losSettings.draw)
             return;
 
@@ -19,18 +29,14 @@ class LOSRenderer {
         renderer.SetColor(losSettings.color);
         renderer.SetColorFillMode("fill");
 
-        for (const los of losInstances) {
-            const minTriangles = 36;
-            const maxAngle = 360;
-
-            const sdkInst = los.GetSdkInstance();
-            const objectInst = los.GetObjectInstance();
-            const worldInfo = objectInst.GetWorldInfo();
+        for (let i = 0; i < losInstances.length; i++) {
+            const sdkInst = losInstances[i].GetSdkInstance();
             const losAngle = C3.toDegrees(sdkInst._cone);
 
             if (losAngle === 0)
                 continue;
 
+            const worldInfo = losInstances[i].GetObjectInstance().GetWorldInfo();
             const instDirection = Math.sign(worldInfo.GetWidth());
             const instAngle = worldInfo.GetAngle();
             const instX = worldInfo.GetX();
@@ -49,20 +55,9 @@ class LOSRenderer {
                 const line2y = (Math.sin(l2Angle) * sdkInst._range) * instDirection;
 
                 renderer.ConvexPoly([
-                    instX,
-                    instY,
-                    instX + line1x,
-                    instY + line1y,
-
-                    instX + line1x,
-                    instY + line1y,
-                    instX + line2x,
-                    instY + line2y,
-
-                    instX + line2x,
-                    instY + line2y,
-                    instX,
-                    instY,
+                    instX, instY, instX + line1x, instY + line1y,
+                    instX + line1x, instY + line1y, instX + line2x, instY + line2y,
+                    instX + line2x, instY + line2y, instX, instY,
                 ]);
             }
         }

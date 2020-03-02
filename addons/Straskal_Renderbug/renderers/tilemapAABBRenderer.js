@@ -1,3 +1,8 @@
+/**
+ * USES UNSUPPORTED C3 APIs
+ * 
+ * - C3.Plugins.Tilemap._tileCells
+ */
 class TilemapAABBRenderer {
 
     /**
@@ -7,24 +12,24 @@ class TilemapAABBRenderer {
      * @param {C3.Instance[]} worldInstances 
      */
     draw(renderer, settings, worldInstances) {
-        const tilemapBBoxSettings = settings.tilemap.bbox;
+        const bboxSettings = settings.tilemap.bbox;
 
-        if (!tilemapBBoxSettings.draw)
+        if (!bboxSettings.draw)
             return;
 
         const tilemapInstances = worldInstances.filter(inst => inst.GetPlugin() instanceof C3.Plugins.Tilemap);
 
         renderer.PushLineWidth(1);
-        renderer.SetColor(tilemapBBoxSettings.color);
+        renderer.SetColor(bboxSettings.color);
         renderer.SetColorFillMode("fill");
 
-        for (const tilemap of tilemapInstances) {
-            const sdkInst = tilemap.GetSdkInstance();
+        for (let i = 0; i < tilemapInstances.length; i++) {
+            const sdkInst = tilemapInstances[i].GetSdkInstance();
             const collisionRectArr2d = sdkInst._tileCells.map(cell => cell.map(c => c._collisionRects)).flat();
 
-            for (const collisionRectArr of collisionRectArr2d) {                
-                for (const collisionRect of collisionRectArr) {                
-                    renderer.LineRect2(collisionRect.GetRect());
+            for (let j = 0; j < collisionRectArr2d.length; j++) {                
+                for (let y = 0; y < collisionRectArr2d[j].length; y++) {                
+                    renderer.LineRect2(collisionRectArr2d[j][y].GetRect());
                 }
             }
         }

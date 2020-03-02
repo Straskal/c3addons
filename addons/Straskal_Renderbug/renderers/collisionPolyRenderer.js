@@ -1,3 +1,9 @@
+/**
+ * USES UNSUPPORTED C3 APIs
+ * 
+ * - C3.AnimationFrameInfo
+ * - C3.Vector2
+ */
 class CollisionPolyRenderer {
 
     /**
@@ -20,31 +26,29 @@ class CollisionPolyRenderer {
         renderer.SetColor(polySettings.color);
         renderer.SetColorFillMode("fill");
 
-        for (const spriteInstance of spriteInstances) {
-            const instAABB = spriteInstance.GetWorldInfo().GetBoundingBox();
-            const instWidth = spriteInstance.GetWorldInfo().GetWidth();
-            const instHeight = spriteInstance.GetWorldInfo().GetHeight();
-            const instAnimFrame = spriteInstance.GetSdkInstance()._currentAnimationFrame;
-            const originTextureCoords = instAnimFrame._origin;
-            const originPixelCoordsX = originTextureCoords._x * instWidth;
-            const originPixelCoordsY = originTextureCoords._y * instHeight;
-    
-            const originPixelCoord = [
-                Math.sign(instWidth) > 0 ? instAABB.getLeft() + originPixelCoordsX : instAABB.getRight() + originPixelCoordsX,
-                Math.sign(instHeight) > 0 ? instAABB.getTop() + originPixelCoordsY : instAABB.getBottom() + originPixelCoordsY
-            ];
-    
+        for (let i = 0; i < spriteInstances.length; i++) {
+            const instAABB = spriteInstances[i].GetWorldInfo().GetBoundingBox();
+            const instWidth = spriteInstances[i].GetWorldInfo().GetWidth();
+            const instHeight = spriteInstances[i].GetWorldInfo().GetHeight();
+            const instAnimFrame = spriteInstances[i].GetSdkInstance()._currentAnimationFrame;
+            const originTexCoords = instAnimFrame._origin;
+
+            // instWidth and instHeight are negative or postive in respect to object mirroring.
+            // multiplying them with our origin texture coords will give us a positive or negative pixel offset.
+            const originPixelOffsetX = originTexCoords.getX() * instWidth;
+            const originPixelOffsetY = originTexCoords.getY() * instHeight;
+            const originPixelCoordX = Math.sign(instWidth) > 0 ? instAABB.getLeft() + originPixelOffsetX : instAABB.getRight() + originPixelOffsetX;
+            const originPixelCoordY = Math.sign(instHeight) > 0 ? instAABB.getTop() + originPixelOffsetY : instAABB.getBottom() + originPixelOffsetY;
+
             if (instAnimFrame._collisionPoly !== null) {
                 const polyPoints = instAnimFrame._collisionPoly._ptsArr;
-                renderer.ConvexPoly(polyPoints.map((pt, index) => {
-                    if (index % 2 == 0) {
-                        return originPixelCoord[0] + (pt * instWidth);
-                    }
-                    return originPixelCoord[1] + (pt * instHeight);
-                }));
-            } else {
-                renderer.Rect(instAABB);
+                const pixelPoints = polyPoints.map((pt, index) => index % 2 == 0 ? originPixelCoordX + (pt * instWidth) : originPixelCoordY + (pt * instHeight));
+
+                renderer.ConvexPoly(pixelPoints);
+                continue;
             }
+
+            renderer.Rect(instAABB);
         }
     }
 }
