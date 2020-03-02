@@ -67,10 +67,10 @@
 				catch(err) {
 					var thrownFrom = this._debugRenderers[i];
 					console.error(`
-						Renderbug: 	ERROR THROWN FROM ${thrownFrom.constructor.name}!
-									This is most likely due to a breaking change in Construct's API.
+					Renderbug: 	ERROR THROWN FROM ${thrownFrom.constructor.name}!
+								This is most likely due to a breaking change in Construct's API.
 
-									Error: ${err}
+								Error: ${err}
 					`);
 
 					brokenRenderers.push(thrownFrom);
