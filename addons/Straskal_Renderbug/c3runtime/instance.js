@@ -56,8 +56,30 @@
 			const worldTypeObjectClasses = this.GetRuntime().GetAllObjectClasses().filter(oc => oc.IsWorldType());
 			const worldTypeInstances = worldTypeObjectClasses.map(oc => oc.GetInstances()).flat();
 
-			for (const debugRenderer of this._debugRenderers)
-				debugRenderer.draw(renderer, this._settings, worldTypeInstances);
+			const brokenRenderers = [];
+
+			// Since Renderbug uses undocumented C3 APIs, we're going to play it safe and run our renderers inside of a try-catch block.
+			// We'll remove any problematic renderers to avoid spamming the console window.
+			for (let i = 0; i < this._debugRenderers.length; i++) {
+				try {
+					this._debugRenderers[i].draw(renderer, this._settings, worldTypeInstances);
+				} 
+				catch(err) {
+					var thrownFrom = this._debugRenderers[i];
+					console.error(`
+						Renderbug: 	ERROR THROWN FROM ${thrownFrom.constructor.name}!
+									This is most likely due to a breaking change in Construct's API.
+
+									Error: ${err}
+					`);
+
+					brokenRenderers.push(thrownFrom);
+				}
+			}
+
+			if (brokenRenderers.length > 0) {
+				this._debugRenderers = this._debugRenderers.filter(renderer => !brokenRenderers.includes(renderer));
+			}
 		}
 
 		SaveToJson() {
