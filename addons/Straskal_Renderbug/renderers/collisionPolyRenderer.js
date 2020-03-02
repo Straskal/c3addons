@@ -24,7 +24,7 @@ class CollisionPolyRenderer {
             .filter(inst => inst.GetWorldInfo().IsCollisionEnabled());
 
         renderer.SetColor(polySettings.color);
-        renderer.SetColorFillMode("fill");
+        renderer.SetColorFillMode("smooth line fill");
 
         for (let i = 0; i < spriteInstances.length; i++) {
             const instAABB = spriteInstances[i].GetWorldInfo().GetBoundingBox();

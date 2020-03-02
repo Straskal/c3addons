@@ -3,7 +3,7 @@
 	// Icon created by https://www.flaticon.com/authors/freepik
 	
 	const PLUGIN_ID = "Straskal_Renderbug";
-	const PLUGIN_VERSION = "1.1.1.0";
+	const PLUGIN_VERSION = "1.1.2.0";
 	const PLUGIN_CATEGORY = "general";
 
 	const PLUGIN_CLASS = SDK.Plugins.Straskal_Renderbug = class Renderbug extends SDK.IPluginBase {

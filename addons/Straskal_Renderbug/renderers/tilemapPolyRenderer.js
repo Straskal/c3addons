@@ -20,7 +20,7 @@ class TilemapPolyRenderer {
         const tilemapInstances = worldInstances.filter(inst => inst.GetPlugin() instanceof C3.Plugins.Tilemap);
 
         renderer.SetColor(tilemapPolySettings.color);
-        renderer.SetColorFillMode("fill");
+        renderer.SetColorFillMode("smooth line fill");
 
         for (let i = 0; i < tilemapInstances.length; i++) {
             const sdkInst = tilemapInstances[i].GetSdkInstance();

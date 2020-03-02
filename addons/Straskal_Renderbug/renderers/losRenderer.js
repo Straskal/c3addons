@@ -15,8 +15,7 @@ class LOSRenderer {
     draw(renderer, settings, worldInstances) {
         const losSettings = settings.los;
 
-        // The larger the cone, the less triangles we use to render it.
-        const minTriangles = 36;
+        const minTriangleStride = 10;
         const maxAngle = 360;
 
         if (!losSettings.draw)
@@ -27,7 +26,7 @@ class LOSRenderer {
             .map(inst => inst.GetBehaviorInstanceFromCtor(C3.Behaviors.LOS));
 
         renderer.SetColor(losSettings.color);
-        renderer.SetColorFillMode("fill");
+        renderer.SetColorFillMode("smooth line fill");
 
         for (let i = 0; i < losInstances.length; i++) {
             const sdkInst = losInstances[i].GetSdkInstance();
@@ -41,7 +40,7 @@ class LOSRenderer {
             const instAngle = worldInfo.GetAngle();
             const instX = worldInfo.GetX();
             const instY = worldInfo.GetY();
-            const stride = (losAngle / maxAngle) * minTriangles;
+            const stride = (losAngle / maxAngle) * minTriangleStride;
             const min = instAngle - (losAngle * 0.5);
             const max = instAngle + (losAngle * 0.5);
 
