@@ -11,7 +11,7 @@ class PathRenderer {
     }
 
     /**
-     * Draw sprite collision polygons.
+     * Draw pathfinding for instance.
      * @param {C3.IWebGLRenderer} renderer 
      * @param {*} settings 
      * @param {C3.Instance[]} worldInstances 
@@ -23,11 +23,11 @@ class PathRenderer {
             return;
 
         const instance = worldInstances
-            .filter(inst => inst.uid == settings.drawForInstance)
-            .filter(inst => inst.GetBehaviorInstanceFromCtor(C3.Behaviors.Pathfinding) != null)
+            .filter(inst => inst.GetUID() === pathSettings.drawForInstance)
+            .filter(inst => inst.GetBehaviorInstanceFromCtor(C3.Behaviors.Pathfinding) !== null)
             .map(inst => inst.GetBehaviorInstanceFromCtor(C3.Behaviors.Pathfinding))[0];
 
-        if (instance == undefined || instance == null)
+        if (instance === undefined || instance === null)
             return;
 
         const sdkInst = instance.GetSdkInstance();
