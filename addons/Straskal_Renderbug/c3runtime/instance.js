@@ -32,6 +32,19 @@
 				los: {
 					draw: properties[15],
 					color: new C3.Color(properties[16][0], properties[16][1], properties[16][2], properties[17]).premultiply()
+				},
+				pathfinding: {
+					draw: properties[18],
+					drawForInstance: properties[19],
+					grid: {
+						color: new C3.Color(properties[20][0], properties[20][1], properties[20][2], properties[23]).premultiply()
+					},
+					obstacles: {
+						color: new C3.Color(properties[21][0], properties[21][1], properties[21][2], properties[23]).premultiply()
+					},
+					path: {
+						color: new C3.Color(properties[22][0], properties[22][1], properties[22][2], properties[23]).premultiply()
+					}
 				}
 			}
 
@@ -41,6 +54,7 @@
 				new TilemapPolyRenderer(),
 				new AABBRenderer(),
 				new CollisionPolyRenderer(),
+				new PathRenderer(),
 				new LOSRenderer()
 			];
 		}
@@ -50,6 +64,8 @@
 		}
 
 		Draw(renderer) {
+			this._debugRenderers = this._debugRenderers.filter(renderer => renderer.isSupported);
+
 			if (!this._settings.isEnabled)
 				return;
 
@@ -63,8 +79,8 @@
 			for (let i = 0; i < this._debugRenderers.length; i++) {
 				try {
 					this._debugRenderers[i].draw(renderer, this._settings, worldTypeInstances);
-				} 
-				catch(err) {
+				}
+				catch (err) {
 					var thrownFrom = this._debugRenderers[i];
 					console.error(`
 					Renderbug: 	ERROR THROWN FROM ${thrownFrom.constructor.name}!
@@ -77,9 +93,7 @@
 				}
 			}
 
-			if (brokenRenderers.length > 0) {
-				this._debugRenderers = this._debugRenderers.filter(renderer => !brokenRenderers.includes(renderer));
-			}
+			this._debugRenderers = this._debugRenderers.filter(renderer => !brokenRenderers.includes(renderer));
 		}
 
 		SaveToJson() {

@@ -5,6 +5,10 @@
  */
 class TilemapPolyRenderer {
 
+    get isSupported() {
+        return C3.Plugins.Tilemap != undefined;
+    }
+
     /**
      * Draw tile map collision polygons.
      * @param {C3.IWebGLRenderer} renderer 

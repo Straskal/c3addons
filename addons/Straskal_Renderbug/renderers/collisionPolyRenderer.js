@@ -6,6 +6,10 @@
  */
 class CollisionPolyRenderer {
 
+    get isSupported() {
+        return C3.Plugins.Sprite != undefined;
+    }
+
     /**
      * Draw sprite collision polygons.
      * @param {C3.IWebGLRenderer} renderer 

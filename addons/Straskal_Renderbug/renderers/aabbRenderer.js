@@ -3,6 +3,10 @@
  */
 class AABBRenderer {
 
+    get isSupported() {
+        return C3.Plugins.Sprite != undefined;
+    }
+
     /**
      * Draw sprite bounding boxes.
      * @param {C3.IWebGLRenderer} renderer 

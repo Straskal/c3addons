@@ -6,6 +6,10 @@
  */
 class LOSRenderer {
 
+    get isSupported() {
+        return C3.Behaviors.LOS != undefined;
+    }
+
     /**
      * Draw LOS cone.
      * @param {C3.IWebGLRenderer} renderer 

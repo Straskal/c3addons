@@ -5,6 +5,10 @@
  */
 class TilemapAABBRenderer {
 
+    get isSupported() {
+        return C3.Plugins.Tilemap != undefined;
+    }
+
     /**
      * Draw tile map AABBS.
      * @param {C3.IWebGLRenderer} renderer 

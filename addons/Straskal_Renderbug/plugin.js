@@ -3,7 +3,7 @@
 	// Icon created by https://www.flaticon.com/authors/freepik
 	
 	const PLUGIN_ID = "Straskal_Renderbug";
-	const PLUGIN_VERSION = "1.1.2.0";
+	const PLUGIN_VERSION = "1.2.0.0";
 	const PLUGIN_CATEGORY = "general";
 
 	const PLUGIN_CLASS = SDK.Plugins.Straskal_Renderbug = class Renderbug extends SDK.IPluginBase {
@@ -48,6 +48,11 @@
 				type: "external-runtime-script"
 			});
 
+			this._info.AddFileDependency({
+				filename: "renderers/pathRenderer.js",
+				type: "external-runtime-script"
+			});
+
 			SDK.Lang.PushContext(".properties");
 
 			this._info.SetProperties([
@@ -84,6 +89,15 @@
 				new SDK.PluginProperty("check", "draw-los", true),
 				new SDK.PluginProperty("color", "los-color", [0, 1, 0]),
 				new SDK.PluginProperty("percent", "los-opacity", 0.1),
+
+				// Pathfinding
+				new SDK.PluginProperty("group", "path-finding"),
+				new SDK.PluginProperty("check", "draw-pf", -1),
+				new SDK.PluginProperty("integer", "draw-pf-instance", -1),
+				new SDK.PluginProperty("color", "pf-grid-color", [0, 0, 1]),
+				new SDK.PluginProperty("color", "pf-obstacle-color", [0, 0, 1]),
+				new SDK.PluginProperty("color", "pf-path-color", [0, 1, 0]),
+				new SDK.PluginProperty("percent", "pf-opacity", 0.5)
 			]);
 
 			SDK.Lang.PopContext();
