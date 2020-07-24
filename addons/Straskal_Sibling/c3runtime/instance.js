@@ -45,7 +45,7 @@
             {
                 const siblings = this._inst.GetSiblings() || [];
 
-                this._siblingsByName = [];
+                this._siblingsByName = {};
                 
                 siblings.forEach(sibling=>{
                     const objectClass = sibling.GetObjectClass();
