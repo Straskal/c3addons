@@ -23,7 +23,7 @@
          /**
          * If the name is not exist on _siblingsByName, add it  .
          */
-        _pushToSiblingsByName(name, sibling)
+        _PushToSiblingsByName(name, sibling)
         {
             
             if(!this._siblingsByName[name]){
@@ -52,12 +52,12 @@
                     const families = objectClass.GetFamilies();
                     
                     const className = objectClass.GetName();
-                    _pushToSiblingsByName(className, sibling)
+                    this._PushToSiblingsByName(className, sibling)
                     
                      for (const family of families)
                     {
                         const familyName = family.GetName();
-                        _pushToSiblingsByName(familyName, sibling)
+                        this._PushToSiblingsByName(familyName, sibling)
                     }
                 })
             }
