@@ -1,6 +1,5 @@
 "use strict";
 {
-	C3.Plugins.Straskal_Renderbug.Cnds =
-	{
-	};
+  const C3 = self.C3;
+  C3.Plugins.Straskal_Renderbug.Cnds = {};
 }
