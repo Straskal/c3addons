@@ -1,147 +1,168 @@
 ﻿{
-	"languageTag": "en-US",
-	"fileDescription": "Strings for Renderbug.",
-	"text": {
-		"plugins": {
-			"straskal_renderbug": {
-				"name": "Renderbug",
-				"description": "Enables various debug drawing capablities during runtime.",
-				"help-url": "https://github.com/Straskal/c3addons",
-				"properties": {
-					"is-enabled": {
-						"name": "Enabled",
-						"desc": "Whether or not the debug renderer is initially enabled."
-					},
+  "languageTag": "en-US",
+  "fileDescription": "Strings for Renderbug.",
+  "text": {
+    "plugins": {
+      "straskal_renderbug": {
+        "name": "Renderbug",
+        "description": "Enables various debug drawing capablities during runtime.",
+        "help-url": "https://github.com/Straskal/c3addons",
+        "properties": {
+          "is-enabled": {
+            "name": "Enabled",
+            "desc": "Whether or not the debug renderer is initially enabled."
+          },
 
-					"bounding-box": {
-						"name": "Sprite bounding boxes",
-						"desc": ""
-					},
-					"draw-bbs": {
-						"name": "Draw",
-						"desc": "Whether or not to draw bounding boxes."
-					},
-					"bb-solids-only": {
-						"name": "Solids only",
-						"desc": "Whether or not to only draw solids."
-					},
-					"bb-color": {
-						"name": "Color",
-						"desc": "The color of bounding boxes."
-					},
-					"bb-opacity": {
-						"name": "Opacity",
-						"desc": "The opacity of bounding boxes."
-					},
+          "bounding-box": {
+            "name": "Sprite bounding boxes",
+            "desc": ""
+          },
+          "draw-bbs": {
+            "name": "Draw",
+            "desc": "Whether or not to draw bounding boxes."
+          },
+          "bb-solids-only": {
+            "name": "Solids only",
+            "desc": "Whether or not to only draw solids."
+          },
+          "bb-color": {
+            "name": "Color",
+            "desc": "The color of bounding boxes."
+          },
+          "bb-opacity": {
+            "name": "Opacity",
+            "desc": "The opacity of bounding boxes."
+          },
 
-					"collision-polys": {
-						"name": "Sprite collision polygons",
-						"desc": ""
-					},
-					"draw-polys": {
-						"name": "Draw",
-						"desc": "Whether or not to draw collision polygons."
-					},
-					"poly-solids-only": {
-						"name": "Solids only",
-						"desc": "Whether or not to only draw solids."
-					},
-					"poly-color": {
-						"name": "Color",
-						"desc": "The color of collision polygons."
-					},
-					"poly-opacity": {
-						"name": "Opacity",
-						"desc": "The opacity of collision polygons."
-					},
+          "collision-polys": {
+            "name": "Sprite collision polygons",
+            "desc": ""
+          },
+          "draw-polys": {
+            "name": "Draw",
+            "desc": "Whether or not to draw collision polygons."
+          },
+          "poly-solids-only": {
+            "name": "Solids only",
+            "desc": "Whether or not to only draw solids."
+          },
+          "poly-color": {
+            "name": "Color",
+            "desc": "The color of collision polygons."
+          },
+          "poly-opacity": {
+            "name": "Opacity",
+            "desc": "The opacity of collision polygons."
+          },
 
-					"tilemap-bounding-box": {
-						"name": "Tilemap bounding boxes",
-						"desc": ""
-					},
-					"draw-tilemap-bbs": {
-						"name": "Draw",
-						"desc": "Whether or not to draw tilemap bounding boxes."
-					},
-					"tilemap-bb-color": {
-						"name": "Color",
-						"desc": "The color of tilemap bounding boxes."
-					},
-					"tilemap-bb-opacity": {
-						"name": "Opacity",
-						"desc": "The opacity of tilemap bounding boxes."
-					},
+          "mesh-polys": {
+            "name": "Sprite mesh polygons",
+            "desc": ""
+          },
+          "draw-mesh": {
+            "name": "Draw",
+            "desc": "Whether or not to draw mesh polygons."
+          },
+          "mesh-solids-only": {
+            "name": "Solids only",
+            "desc": "Whether or not to only draw solids."
+          },
+          "mesh-color": {
+            "name": "Color",
+            "desc": "The color of mesh polygons."
+          },
+          "mesh-opacity": {
+            "name": "Opacity",
+            "desc": "The opacity of mesh polygons."
+          },
 
-					"tilemap-polys": {
-						"name": "Tilemap collision polygons",
-						"desc": ""
-					},
-					"draw-tilemap-polys": {
-						"name": "Draw",
-						"desc": "Whether or not to draw tilemap collision polygons."
-					},
-					"tilemap-poly-color": {
-						"name": "Color",
-						"desc": "The color of tilemap collision polygons."
-					},
-					"tilemap-poly-opacity": {
-						"name": "Opacity",
-						"desc": "The opacity of tilemap collision polygons."
-					},
+          "tilemap-bounding-box": {
+            "name": "Tilemap bounding boxes",
+            "desc": ""
+          },
+          "draw-tilemap-bbs": {
+            "name": "Draw",
+            "desc": "Whether or not to draw tilemap bounding boxes."
+          },
+          "tilemap-bb-color": {
+            "name": "Color",
+            "desc": "The color of tilemap bounding boxes."
+          },
+          "tilemap-bb-opacity": {
+            "name": "Opacity",
+            "desc": "The opacity of tilemap bounding boxes."
+          },
 
-					"line-of-sight": {
-						"name": "Lines of sight",
-						"desc": ""
-					},
-					"draw-los": {
-						"name": "Draw",
-						"desc": "Whether or not to draw bounding boxes."
-					},
-					"los-color": {
-						"name": "Color",
-						"desc": "The color of LOS."
-					},
-					"los-opacity": {
-						"name": "Opacity",
-						"desc": "The opacity of LOS cone."
-					},
+          "tilemap-polys": {
+            "name": "Tilemap collision polygons",
+            "desc": ""
+          },
+          "draw-tilemap-polys": {
+            "name": "Draw",
+            "desc": "Whether or not to draw tilemap collision polygons."
+          },
+          "tilemap-poly-color": {
+            "name": "Color",
+            "desc": "The color of tilemap collision polygons."
+          },
+          "tilemap-poly-opacity": {
+            "name": "Opacity",
+            "desc": "The opacity of tilemap collision polygons."
+          },
 
-					"path-finding": {
-						"name": "Pathfinding",
-						"desc": ""
-					},
-					"draw-pf": {
-						"name": "Draw",
-						"desc": "Whether or not to draw pathfinding."
-					},
-					"draw-pf-instance": {
-						"name": "Draw for instance",
-						"desc": "The instance UID to draw for."
-					},
-					"pf-grid-color": {
-						"name": "Grid color",
-						"desc": "The color of the pathfinding grid."
-					},
-					"pf-obstacle-color": {
-						"name": "Obstacle color",
-						"desc": "The color of the pathfinding obstacles."
-					},
-					"pf-path-color": {
-						"name": "Path color",
-						"desc": "The color of the pathfinding path."
-					},
-					"pf-opacity": {
-						"name": "Opacity",
-						"desc": "The opacity of pathfinding."
-					}
-				},
-				"aceCategories": {
-					"custom": "Custom"
-				},
-				"conditions": {},
-				"actions": {},
-				"expressions": {}
-			}
-		}
-	}
+          "line-of-sight": {
+            "name": "Lines of sight",
+            "desc": ""
+          },
+          "draw-los": {
+            "name": "Draw",
+            "desc": "Whether or not to draw bounding boxes."
+          },
+          "los-color": {
+            "name": "Color",
+            "desc": "The color of LOS."
+          },
+          "los-opacity": {
+            "name": "Opacity",
+            "desc": "The opacity of LOS cone."
+          },
+
+          "path-finding": {
+            "name": "Pathfinding",
+            "desc": ""
+          },
+          "draw-pf": {
+            "name": "Draw",
+            "desc": "Whether or not to draw pathfinding."
+          },
+          "draw-pf-instance": {
+            "name": "Draw for instance",
+            "desc": "The instance UID to draw for."
+          },
+          "pf-grid-color": {
+            "name": "Grid color",
+            "desc": "The color of the pathfinding grid."
+          },
+          "pf-obstacle-color": {
+            "name": "Obstacle color",
+            "desc": "The color of the pathfinding obstacles."
+          },
+          "pf-path-color": {
+            "name": "Path color",
+            "desc": "The color of the pathfinding path."
+          },
+          "pf-opacity": {
+            "name": "Opacity",
+            "desc": "The opacity of pathfinding."
+          }
+        },
+        "aceCategories": {
+          "custom": "Custom"
+        },
+        "conditions": {},
+        "actions": {},
+        "expressions": {}
+      }
+    }
+  }
 }
